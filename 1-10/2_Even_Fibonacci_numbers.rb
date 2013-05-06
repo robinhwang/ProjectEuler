@@ -7,19 +7,6 @@ def fibo(n)
   fibo(n-1) + fibo(n-2)
 end
 
-sum = 0
-(1..100).each do |n|
-  if fibo(n) < 4000000
-    if fibo(n) % 2 == 0
-      sum += fibo(n)
-    end
-    puts sum
-  else
-    puts "end"
-  end
-end
-
-
-
-
-
+cache = {}
+#use 2.0 Enumerable#lazy maybe better
+puts (1..Float::INFINITY).take_while{|n| cache[n] = fibo(n); cache[n] < 4_000_000}.select{|n| cache[n].even?}.map{|n| cache[n]}.reduce :+
