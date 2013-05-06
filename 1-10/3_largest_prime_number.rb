@@ -1,9 +1,9 @@
-# 3.最大的素数约数
+﻿# 3.最大的素数约数
 # 13195的素数约数是5，7，13，29    
 # 那么600851475143最大的素因数是？
 
 def find_big_num(x)
-  i = x/2
+  i = Math.sqrt(x).to_i
   (2..i).each {|n| return find_big_num(x/n) if x%n == 0}
   return x
 end
