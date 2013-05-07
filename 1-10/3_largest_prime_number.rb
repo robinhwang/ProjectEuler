@@ -7,4 +7,4 @@ def find_big_num(x)
   (2..i).each {|n| return find_big_num(x/n) if x%n == 0}
   return x
 end
-puts find_big_num(600851475143)
+puts find_big_num(2541)
