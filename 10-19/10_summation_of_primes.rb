@@ -10,3 +10,8 @@ Prime.each(Float::INFINITY) do |prime|
   end
 end
 puts a.reduce(:+)
+
+#require 'active_support/core_ext/enumerable.rb'
+#or the lazy way 
+#require 'active_support/all'
+#a.sum
